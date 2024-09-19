@@ -1,0 +1,22 @@
+// @mixin text-preset($font-size, $font-weight, $line-height, $letter-spacing) {
+//     font-size: calc($font-size / 16) + rem; // Конвертируем переданное значение в пикселях в rem
+//     font-weight: $font-weight;
+//     line-height: $line-height;
+//     letter-spacing: $letter-spacing;
+// }
+@mixin text-preset($min-font-size, $max-font-size, $font-weight, $line-height, $letter-spacing) {
+    font-size: clamp(#{$min-font-size / 16}rem, 1vw * 0.3 + #{$min-font-size / 16}rem, #{$max-font-size / 16}rem);
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin style-ul-list($content, $p-left, $p-right, $color, $weight){
+    content: $content;
+    padding-left: $p-left;
+    padding-right: $p-right;
+    color: $color;
+    position: absolute;
+    left: 0;
+    font-weight: $weight;
+}

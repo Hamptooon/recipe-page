@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+body{
+    font-family: "Outfit", sans-serif;
+    // font-size: $font-size;
+    @include mixins.text-preset(16, 32,  $weight400, 1.5, 0);
+    background-color: $brown800;
+    
+}
+title{
+    font-family: "Young Serif", serif;
+}
+.wrapper {
+    background-color: $stone100;
+    color: $stone600;
+    min-height: 100vh; /* Минимальная высота будет равна высоте экрана */
+    padding: 90px 0;
+    @media (max-width: 375px){
+        padding: 0px;
+    }
+    &::before {
+      content: "";
+      z-index: 100;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1295275/background-noise.png);
+      animation: 0.2s infinite noise;
+      opacity: .9;
+      pointer-events: none;
+    }
+  }
+  
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%; /* Минимальная высота на всю высоту wrapper */
+    box-sizing: border-box;
+}
+h1,h2{
+    font-family: "Young Serif", serif;
+    margin-bottom: 15px;
+}
+h1{
+    @include mixins.text-preset(40, 80,  $weight400, 1.5, 0);
+    color: $stone900;
+}
+h2{
+    @include mixins.text-preset(35, 70, $weight400, 1.5, 0);
+    color: $brown800;
+}
+h3{
+    @include mixins.text-preset(24, 48, $weight600, 1.5, 0);
+    color: $rose800;
+}
+
+
+a{
+    color: $white;
+}

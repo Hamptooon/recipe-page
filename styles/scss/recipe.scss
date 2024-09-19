@@ -1,0 +1,134 @@
+@use "./utilities/reset";
+@use "./utilities/mixins" as mixins;
+@import "./utilities/variables";
+@import "./utilities/global";
+
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    width: clamp($mobile-screen, 50vw, 1800px); 
+    @media (max-width: $mobile-screen) {
+        width: 100%;
+    }
+    border-radius: clamp(0px, (100vw - 350px), 20px);
+    @media (max-width: $mobile-screen) {
+        border-radius: 0px;
+    }
+    padding: clamp(0px, (100vw - 300px) * 0.1, 45px);
+    @media (max-width: $mobile-screen) {
+        padding: 0px;
+    }
+
+    &__image {
+        border-radius: clamp(0px, (100vw - 350px), 20px);
+        @media (max-width: $mobile-screen) {
+            border-radius: 0px;
+        }
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+    &__content {
+        @media (max-width: $mobile-screen) {
+            padding: 0 20px 20px 20px;
+        }
+        display: flex;
+        flex-direction: column;
+    }
+    &__description{
+        margin-bottom: 35px;
+    }
+
+
+    &__time{
+        background-color: $rose50;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    &__time-title{
+        margin-bottom: 10px;
+    }
+    &__time-list{
+        li{
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 10px;
+        }
+        li::before{
+            @include mixins.style-ul-list('•', 10px, 24px, $rose800, 700);
+            top:50%;
+            transform: translateY(-50%);
+        }
+    }
+
+
+    &__ingredients{
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $stone150;
+    }
+    &__ingredients-list{
+        li{
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 10px;
+        }
+        li::before{
+            @include mixins.style-ul-list('•', 10px, 24px, $brown800, 700);
+            top:50%;
+            transform: translateY(-50%);
+        }
+    }
+
+
+    &__instructions{
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $stone150;
+        li{
+            color: $brown800;
+            font-weight: $weight700;
+            
+            position: relative;
+            margin-left: 25px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__instruction-title{
+        font-weight: $weight700;
+        color: $stone600;
+    }
+    &__instruction-description{
+        font-weight: $weight400;
+        color: $stone600;
+    }
+
+
+    &__nutrition-description{
+        margin-bottom: 15px;
+    }
+    &__nutrition-table{
+        width: 100%;
+        
+        tr:not(:last-child){
+            border-bottom: 1px solid $stone150;
+        }
+        td{
+            @include mixins.text-preset(16, 32, $weight700, 1.5, 0);
+            width: 50%;
+            padding: 15px 35px;
+            font-weight: $weight700;
+            color: $brown800;
+            
+        }
+        th{
+            @include mixins.text-preset(16, 32, $weight400, 1.5, 0);
+            text-align: left;
+            padding: 15px 45px;
+        }
+    }
+}

@@ -1,0 +1,326 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1rem, 0.3vw + 1rem, 2rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  background-color: hsl(14, 45%, 36%);
+}
+
+title {
+  font-family: "Young Serif", serif;
+}
+
+.wrapper {
+  background-color: hsl(30, 54%, 90%);
+  color: hsl(30, 10%, 34%);
+  min-height: 100vh; /* Минимальная высота будет равна высоте экрана */
+  padding: 90px 0;
+}
+@media (max-width: 375px) {
+  .wrapper {
+    padding: 0px;
+  }
+}
+.wrapper::before {
+  content: "";
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1295275/background-noise.png);
+  animation: 0.2s infinite noise;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%; /* Минимальная высота на всю высоту wrapper */
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-family: "Young Serif", serif;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 0.3vw + 2.5rem, 5rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: hsl(24, 5%, 18%);
+}
+
+h2 {
+  font-size: clamp(2.1875rem, 0.3vw + 2.1875rem, 4.375rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: hsl(14, 45%, 36%);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 0.3vw + 1.5rem, 3rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: hsl(332, 51%, 32%);
+}
+
+a {
+  color: hsl(0, 0%, 100%);
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0, 0%, 100%);
+  width: clamp(375px, 50vw, 1800px);
+  border-radius: clamp(0px, 100vw - 350px, 20px);
+  padding: clamp(0px, (100vw - 300px) * 0.1, 45px);
+}
+@media (max-width: 375px) {
+  .recipe {
+    width: 100%;
+  }
+}
+@media (max-width: 375px) {
+  .recipe {
+    border-radius: 0px;
+  }
+}
+@media (max-width: 375px) {
+  .recipe {
+    padding: 0px;
+  }
+}
+.recipe__image {
+  border-radius: clamp(0px, 100vw - 350px, 20px);
+  max-width: 100%;
+  margin-bottom: 25px;
+}
+@media (max-width: 375px) {
+  .recipe__image {
+    border-radius: 0px;
+  }
+}
+.recipe__content {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 375px) {
+  .recipe__content {
+    padding: 0 20px 20px 20px;
+  }
+}
+.recipe__description {
+  margin-bottom: 35px;
+}
+.recipe__time {
+  background-color: hsl(330, 100%, 98%);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.recipe__time-title {
+  margin-bottom: 10px;
+}
+.recipe__time-list li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px;
+}
+.recipe__time-list li::before {
+  content: "•";
+  padding-left: 10px;
+  padding-right: 24px;
+  color: hsl(332, 51%, 32%);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.recipe__ingredients {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid hsl(30, 18%, 87%);
+}
+.recipe__ingredients-list li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px;
+}
+.recipe__ingredients-list li::before {
+  content: "•";
+  padding-left: 10px;
+  padding-right: 24px;
+  color: hsl(14, 45%, 36%);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.recipe__instructions {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid hsl(30, 18%, 87%);
+}
+.recipe__instructions li {
+  color: hsl(14, 45%, 36%);
+  font-weight: 700;
+  position: relative;
+  margin-left: 25px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.recipe__instruction-title {
+  font-weight: 700;
+  color: hsl(30, 10%, 34%);
+}
+.recipe__instruction-description {
+  font-weight: 400;
+  color: hsl(30, 10%, 34%);
+}
+.recipe__nutrition-description {
+  margin-bottom: 15px;
+}
+.recipe__nutrition-table {
+  width: 100%;
+}
+.recipe__nutrition-table tr:not(:last-child) {
+  border-bottom: 1px solid hsl(30, 18%, 87%);
+}
+.recipe__nutrition-table td {
+  font-size: clamp(1rem, 0.3vw + 1rem, 2rem);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+  width: 50%;
+  padding: 15px 35px;
+  font-weight: 700;
+  color: hsl(14, 45%, 36%);
+}
+.recipe__nutrition-table th {
+  font-size: clamp(1rem, 0.3vw + 1rem, 2rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: left;
+  padding: 15px 45px;
+}
