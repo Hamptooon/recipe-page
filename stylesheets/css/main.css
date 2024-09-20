@@ -121,7 +121,7 @@ title {
   background-color: hsl(30, 54%, 90%);
   color: hsl(30, 10%, 34%);
   min-height: 100vh; /* Минимальная высота будет равна высоте экрана */
-  padding: 90px 0;
+  padding: 70px 0;
 }
 @media (max-width: 375px) {
   .wrapper {
@@ -237,6 +237,12 @@ a {
   margin-bottom: 20px;
 }
 .recipe__time-title {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1.5rem, 0.3vw + 1.5rem, 3rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: hsl(332, 51%, 32%);
   margin-bottom: 10px;
 }
 .recipe__time-list li {

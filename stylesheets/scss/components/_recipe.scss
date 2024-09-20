@@ -42,6 +42,9 @@
         margin-bottom: 20px;
     }
     &__time-title{
+        font-family: "Outfit", sans-serif;
+        @include mixins.text-preset(24, 48, $weight600, 1.5, 0);
+        color: $rose800;
         margin-bottom: 10px;
     }
     &__time-list{
